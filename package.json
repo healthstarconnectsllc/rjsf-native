@@ -1,12 +1,14 @@
 {
   "name": "rjsf-native",
-  "version": "1.0.13",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/rjsf-native.esm.js",
   "typings": "dist/index.d.ts",
   "description": "React Native theme, fields and widgets for react-jsonschema-form",
   "license": "MIT",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "tsdx watch",
     "build": "rimraf dist && tsdx build",
@@ -22,9 +24,9 @@
   },
   "peerDependencies": {
     "@react-native-community/slider": "*",
-    "@rjsf/core": "^2.0.0",
-    "react": ">=16",
-    "react-native": ">=0.60.0"
+    "@rjsf/core": "5.16.1",
+    "react": ">=17",
+    "react-native": ">=0.70.0"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",

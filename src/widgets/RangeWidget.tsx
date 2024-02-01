@@ -1,47 +1,53 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { utils, WidgetProps } from '@rjsf/core';
-import Slider from '@react-native-community/slider';
 import { useFormContext } from '../FormContext';
+import { SliderComponent } from '@react-native-community/slider';
 
 const { rangeSpec } = utils;
 
 const RangeWidget = ({
-                       value,
-                       readonly,
-                       disabled,
-                       schema,
-                       onChange,
-                     }: WidgetProps) => {
+  value,
+  readonly,
+  disabled,
+  schema,
+  onChange,
+}: WidgetProps) => {
   const { theme } = useFormContext();
   const { min = 0, step = 1, max = 100 } = rangeSpec(schema);
 
   return (
-    <View style={ styles.container }>
+    <View style={styles.container}>
       <Text
-        style={ [ styles.ends, {
-          color: theme.textColor,
-        } ] }
+        style={[
+          styles.ends,
+          {
+            color: theme.textColor,
+          },
+        ]}
       >
-        { min }
+        {min}
       </Text>
-      <Slider
-        style={ styles.slider }
-        value={ value }
-        step={ step }
-        disabled={ disabled || readonly }
-        minimumValue={ min }
-        maximumValue={ max }
-        onValueChange={ onChange }
-        thumbTintColor={ theme.highlightColor }
-        minimumTrackTintColor={ theme.highlightColor }
+      <SliderComponent
+        style={styles.slider}
+        value={value}
+        step={step}
+        disabled={disabled || readonly}
+        minimumValue={min}
+        maximumValue={max}
+        onValueChange={onChange}
+        thumbTintColor={theme.highlightColor}
+        minimumTrackTintColor={theme.highlightColor}
       />
       <Text
-        style={ [ styles.ends, {
-          color: theme.highlightColor,
-        } ] }
+        style={[
+          styles.ends,
+          {
+            color: theme.highlightColor,
+          },
+        ]}
       >
-        { value }
+        {value}
       </Text>
     </View>
   );
