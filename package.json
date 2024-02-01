@@ -17,14 +17,10 @@
     "prepare": "tsdx build",
     "prepublish": "yarn build"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
   "peerDependencies": {
     "@react-native-community/slider": "*",
     "@rjsf/core": "5.16.1",
+    "@rjsf/utils": "5.16.1",
     "react": ">=17",
     "react-native": ">=0.70.0"
   },

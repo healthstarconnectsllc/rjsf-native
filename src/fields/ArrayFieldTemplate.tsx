@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrayFieldTemplateProps, IdSchema, utils } from '@rjsf/core';
+import { ArrayFieldTemplateProps, IdSchema } from '@rjsf/core';
+import utils from '@rjsf/utils';
 import { Image, LayoutAnimation, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import DescriptionField from './DescriptionField';
 import { useFormContext } from '../FormContext';

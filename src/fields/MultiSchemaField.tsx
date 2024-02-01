@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { FieldProps, utils } from '@rjsf/core';
+import { FieldProps } from '@rjsf/core';
+import utils from '@rjsf/utils'
 import { JSONSchema7 } from 'json-schema';
 
 const {
