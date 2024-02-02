@@ -1,10 +1,4 @@
-/// <reference types="react" />
-import { TextInputIOSProps } from 'react-native';
+import React from 'react';
 import { WidgetProps } from '@rjsf/utils';
-declare type TextWidgetProps = WidgetProps & {
-    multiline?: boolean;
-    secureEntry?: boolean;
-    textContentType?: TextInputIOSProps['textContentType'];
-};
-declare const TextWidget: ({ id, readonly, disabled, label, value, onChange, onBlur, onFocus, autofocus, options, multiline, secureEntry, schema, textContentType, rawErrors, }: TextWidgetProps) => JSX.Element;
-export default TextWidget;
+declare const _default: React.ComponentType<WidgetProps<any, import("@rjsf/utils").RJSFSchema, any>>;
+export default _default;

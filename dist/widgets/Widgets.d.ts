@@ -1,18 +1,13 @@
 /// <reference types="react" />
-/// <reference types="@rjsf/core" />
 export declare const Widgets: {
-    TextWidget: ({ id, readonly, disabled, label, value, onChange, onBlur, onFocus, autofocus, options, multiline, secureEntry, schema, textContentType, rawErrors, }: import("@rjsf/core").WidgetProps & {
-        multiline?: boolean | undefined;
-        secureEntry?: boolean | undefined;
-        textContentType?: "none" | "URL" | "addressCity" | "addressCityAndState" | "addressState" | "countryName" | "creditCardNumber" | "creditCardExpiration" | "creditCardExpirationMonth" | "creditCardExpirationYear" | "creditCardSecurityCode" | "creditCardType" | "creditCardName" | "creditCardGivenName" | "creditCardMiddleName" | "creditCardFamilyName" | "emailAddress" | "familyName" | "fullStreetAddress" | "givenName" | "jobTitle" | "location" | "middleName" | "name" | "namePrefix" | "nameSuffix" | "nickname" | "organizationName" | "postalCode" | "streetAddressLine1" | "streetAddressLine2" | "sublocality" | "telephoneNumber" | "username" | "password" | "newPassword" | "oneTimeCode" | "birthdate" | "birthdateDay" | "birthdateMonth" | "birthdateYear" | undefined;
-    }) => JSX.Element;
-    EmailWidget: (props: import("@rjsf/core").WidgetProps) => JSX.Element;
-    URLWidget: (props: import("@rjsf/core").WidgetProps) => JSX.Element;
-    TextareaWidget: (props: import("@rjsf/core").WidgetProps) => JSX.Element;
-    CheckboxWidget: ({ value, disabled, readonly, label, onChange, schema, }: import("@rjsf/core").WidgetProps) => JSX.Element;
-    CheckboxesWidget: ({ disabled, options, value, readonly, onChange, }: import("@rjsf/core").WidgetProps) => JSX.Element;
-    PasswordWidget: (props: import("@rjsf/core").WidgetProps) => JSX.Element;
-    RadioWidget: ({ options, value, disabled, readonly, onChange, rawErrors, }: import("@rjsf/core").WidgetProps) => JSX.Element;
-    SelectWidget: ({ options, value, disabled, readonly, onChange, rawErrors, }: import("@rjsf/core").WidgetProps) => JSX.Element;
-    RangeWidget: ({ value, readonly, disabled, schema, onChange, }: import("@rjsf/core").WidgetProps) => JSX.Element;
+    TextWidget: import("react").ComponentType<import("@rjsf/utils").WidgetProps<any, import("@rjsf/utils").RJSFSchema, any>>;
+    EmailWidget: (props: import("@rjsf/utils").WidgetProps<any, import("@rjsf/utils").RJSFSchema, any>) => JSX.Element;
+    URLWidget: (props: import("@rjsf/utils").WidgetProps<any, import("@rjsf/utils").RJSFSchema, any>) => JSX.Element;
+    TextareaWidget: (props: import("@rjsf/utils").WidgetProps<any, import("@rjsf/utils").RJSFSchema, any>) => JSX.Element;
+    CheckboxWidget: ({ value, disabled, readonly, label, onChange, schema, }: import("@rjsf/utils").WidgetProps<any, import("@rjsf/utils").RJSFSchema, any>) => JSX.Element;
+    CheckboxesWidget: ({ disabled, options, value, readonly, onChange, }: import("@rjsf/utils").WidgetProps<any, import("@rjsf/utils").RJSFSchema, any>) => JSX.Element;
+    PasswordWidget: (props: import("@rjsf/utils").WidgetProps<any, import("@rjsf/utils").RJSFSchema, any>) => JSX.Element;
+    RadioWidget: ({ options, value, disabled, readonly, onChange, rawErrors, }: import("@rjsf/utils").WidgetProps<any, import("@rjsf/utils").RJSFSchema, any>) => JSX.Element;
+    SelectWidget: ({ options, value, disabled, readonly, onChange, rawErrors, }: import("@rjsf/utils").WidgetProps<any, import("@rjsf/utils").RJSFSchema, any>) => JSX.Element;
+    RangeWidget: ({ value, readonly, disabled, schema, onChange, }: import("@rjsf/utils").WidgetProps<any, import("@rjsf/utils").RJSFSchema, any>) => JSX.Element;
 };
