@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, TextInputIOSProps } from 'react-native';
-import { WidgetProps } from '@rjsf/utils';
+import {  WidgetProps, Widget } from '@rjsf/utils';
 import { useFormContext } from '../FormContext';
 
 type TextWidgetProps = WidgetProps & {
@@ -84,4 +84,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TextWidget;
+export default TextWidget as Widget;

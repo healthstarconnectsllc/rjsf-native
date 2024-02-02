@@ -9,9 +9,9 @@ import EmailWidget from './EmailWidget';
 import URLWidget from './URLWidget';
 
 export const Widgets = {
-  TextWidget,
-  EmailWidget,
-  URLWidget,
+   TextWidget,
+    EmailWidget,
+   URLWidget,
   TextareaWidget,
   CheckboxWidget,
   CheckboxesWidget,
@@ -19,4 +19,4 @@ export const Widgets = {
   RadioWidget,
   SelectWidget: RadioWidget,
   RangeWidget,
-};
+}
