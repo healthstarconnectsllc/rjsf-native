@@ -1772,6 +1772,17 @@
     "react-is" "^16.9.0"
     "shortid" "^2.2.14"
 
+"@rjsf/utils@5.16.1":
+  "integrity" "sha512-zJ8WopscMl46QBjlIalIoPERs7kgSfUwIZ5zx4OMBRp0O+m7Scx0F+4iHqLnRuHEfaCNA5D7IKxmx1whOG/x1Q=="
+  "resolved" "https://registry.npmjs.org/@rjsf/utils/-/utils-5.16.1.tgz"
+  "version" "5.16.1"
+  dependencies:
+    "json-schema-merge-allof" "^0.8.1"
+    "jsonpointer" "^5.0.1"
+    "lodash" "^4.17.21"
+    "lodash-es" "^4.17.21"
+    "react-is" "^18.2.0"
+
 "@rollup/plugin-commonjs@^11.0.0":
   "integrity" "sha512-Ycr12N3ZPN96Fw2STurD21jMqzKwL9QuFhms3SD7KKRK7oaXUsBU9Zt0jL/rOPHiPYisI21/rXGO3jr9BnLHUA=="
   "resolved" "https://registry.npmjs.org/@rollup/plugin-commonjs/-/plugin-commonjs-11.1.0.tgz"
@@ -3110,21 +3121,21 @@
     "safe-buffer" "5.1.2"
     "vary" "~1.1.2"
 
-"compute-gcd@^1.2.0":
-  "integrity" "sha1-/B7eW2UAHpUCJlAvRlQ4Y+T+oQ4= sha512-E/n2S4m7JUOk+k7MubncFiCTP9bezvt5y+t20PiseMw8o8YwiOJvyFVpWP/nMQCrwPQPNsu8zITEnZjn162Wew=="
-  "resolved" "https://registry.npmjs.org/compute-gcd/-/compute-gcd-1.2.0.tgz"
-  "version" "1.2.0"
+"compute-gcd@^1.2.1":
+  "integrity" "sha512-TwMbxBNz0l71+8Sc4czv13h4kEqnchV9igQZBi6QUaz09dnz13juGnnaWWJTRsP3brxOoxeB4SA2WELLw1hCtg=="
+  "resolved" "https://registry.npmjs.org/compute-gcd/-/compute-gcd-1.2.1.tgz"
+  "version" "1.2.1"
   dependencies:
     "validate.io-array" "^1.0.3"
     "validate.io-function" "^1.0.2"
     "validate.io-integer-array" "^1.0.0"
 
-"compute-lcm@^1.1.0":
-  "integrity" "sha1-q9ltBAtBsKFm+JlEtci3xRHiGtU= sha512-8h5ZyTEGCjLrFoyu9zvM9t+eQpqoX5dwouOxrQQUxEupAjfMSgStrRVccVNl9Q3W29wKR+YJhfujxTfFxTBmcA=="
-  "resolved" "https://registry.npmjs.org/compute-lcm/-/compute-lcm-1.1.0.tgz"
-  "version" "1.1.0"
+"compute-lcm@^1.1.0", "compute-lcm@^1.1.2":
+  "integrity" "sha512-OFNPdQAXnQhDSKioX8/XYT6sdUlXwpeMjfd6ApxMJfyZ4GxmLR1xvMERctlYhlHwIiz6CSpBc2+qYKjHGZw4TQ=="
+  "resolved" "https://registry.npmjs.org/compute-lcm/-/compute-lcm-1.1.2.tgz"
+  "version" "1.1.2"
   dependencies:
-    "compute-gcd" "^1.2.0"
+    "compute-gcd" "^1.2.1"
     "validate.io-array" "^1.0.3"
     "validate.io-function" "^1.0.2"
     "validate.io-integer-array" "^1.0.0"
@@ -5513,6 +5524,15 @@
     "json-schema-compare" "^0.2.2"
     "lodash" "^4.17.4"
 
+"json-schema-merge-allof@^0.8.1":
+  "integrity" "sha512-CTUKmIlPJbsWfzRRnOXz+0MjIqvnleIXwFTzz+t9T86HnYX/Rozria6ZVGLktAU9e+NygNljveP+yxqtQp/Q4w=="
+  "resolved" "https://registry.npmjs.org/json-schema-merge-allof/-/json-schema-merge-allof-0.8.1.tgz"
+  "version" "0.8.1"
+  dependencies:
+    "compute-lcm" "^1.1.2"
+    "json-schema-compare" "^0.2.2"
+    "lodash" "^4.17.20"
+
 "json-schema-traverse@^0.4.1":
   "integrity" "sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg=="
   "resolved" "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-0.4.1.tgz"
@@ -5556,6 +5576,11 @@
   "integrity" "sha512-CXcRvMyTlnR53xMcKnuMzfCA5i/nfblTnnr74CZb6C4vG39eu6w51t7nKmU5MfLfbTgGItliNyjO/ciNPDqClg=="
   "resolved" "https://registry.npmjs.org/jsonpointer/-/jsonpointer-4.1.0.tgz"
   "version" "4.1.0"
+
+"jsonpointer@^5.0.1":
+  "integrity" "sha512-p/nXbhSEcu3pZRdkW1OfJhpsVtW1gd4Wa1fnQc9YLiTfAjn0312eMKimbdIQzuZl9aa9xUGaRlP9T/CJE/ditQ=="
+  "resolved" "https://registry.npmjs.org/jsonpointer/-/jsonpointer-5.0.1.tgz"
+  "version" "5.0.1"
 
 "jsprim@^1.2.2":
   "integrity" "sha1-MT5mvB5cwG5Di8G3SZwuXFastqI= sha512-4Dj8Rf+fQ+/Pn7C5qeEX02op1WfOss3PKTE9Nsop3Dx+6UPxlm1dr/og7o2cRa5hNN07CACr4NFzRLtj/rjWog=="
@@ -5704,6 +5729,11 @@
   dependencies:
     "p-locate" "^5.0.0"
 
+"lodash-es@^4.17.21":
+  "integrity" "sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw=="
+  "resolved" "https://registry.npmjs.org/lodash-es/-/lodash-es-4.17.21.tgz"
+  "version" "4.17.21"
+
 "lodash.debounce@^4.0.8":
   "integrity" "sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow=="
   "resolved" "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
@@ -5729,10 +5759,10 @@
   "resolved" "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz"
   "version" "4.1.1"
 
-"lodash@^4.17.10", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.4":
-  "integrity" "sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ=="
-  "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.19.tgz"
-  "version" "4.17.19"
+"lodash@^4.17.10", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.20", "lodash@^4.17.21", "lodash@^4.17.4":
+  "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
+  "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
+  "version" "4.17.21"
 
 "log-symbols@^2.2.0":
   "integrity" "sha512-VeIAFslyIerEJLXHziedo2basKbMKtTw3vfn5IzG0XTjhAVEJyNHnL2p7vc+wBDSdQuUpNw3M2u6xb9QsAY5Eg=="
@@ -6962,6 +6992,11 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   "version" "18.2.0"
 
+"react-is@^18.2.0":
+  "integrity" "sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w=="
+  "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
+  "version" "18.2.0"
+
 "react-native@*", "react-native@>=0.70.0":
   "integrity" "sha512-RSQDtT2DNUcmB4IgmW9NhRb5wqvXFl6DI2NEJmt0ps2OrVHpoA8Tkq+lkFOA/fvPscJKtFKEHFBDSR5UHR3PUw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.73.3.tgz"
@@ -7019,7 +7054,7 @@
     "object-assign" "^4.1.1"
     "react-is" "^16.12.0 || ^17.0.0 || ^18.0.0"
 
-"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@>=16", "react@>=17", "react@18.2.0":
+"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.14.0 || >=17", "react@>=16", "react@>=17", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
@@ -8538,17 +8573,17 @@
     "spdx-expression-parse" "^3.0.0"
 
 "validate.io-array@^1.0.3":
-  "integrity" "sha1-W1osr9j4uFq7L4hroVPy2Tond00= sha512-DeOy7CnPEziggrOO5CZhVKJw6S3Yi7e9e65R1Nl/RTN1vTQKnzjfvks0/8kQ40FP/dsjRAOd4hxmJ7uLa6vxkg=="
+  "integrity" "sha512-DeOy7CnPEziggrOO5CZhVKJw6S3Yi7e9e65R1Nl/RTN1vTQKnzjfvks0/8kQ40FP/dsjRAOd4hxmJ7uLa6vxkg=="
   "resolved" "https://registry.npmjs.org/validate.io-array/-/validate.io-array-1.0.6.tgz"
   "version" "1.0.6"
 
 "validate.io-function@^1.0.2":
-  "integrity" "sha1-NDoZgC7TsZaCaceA5VjpNBHAutc= sha512-LlFybRJEriSuBnUhQyG5bwglhh50EpTL2ul23MPIuR1odjO7XaMLFV8vHGwp7AZciFxtYOeiSCT5st+XSPONiQ=="
+  "integrity" "sha512-LlFybRJEriSuBnUhQyG5bwglhh50EpTL2ul23MPIuR1odjO7XaMLFV8vHGwp7AZciFxtYOeiSCT5st+XSPONiQ=="
   "resolved" "https://registry.npmjs.org/validate.io-function/-/validate.io-function-1.0.2.tgz"
   "version" "1.0.2"
 
 "validate.io-integer-array@^1.0.0":
-  "integrity" "sha1-LKveAzKTpry+Bj/q/pHq9GsToIk= sha512-mTrMk/1ytQHtCY0oNO3dztafHYyGU88KL+jRxWuzfOmQb+4qqnWmI+gykvGp8usKZOM0H7keJHEbRaFiYA0VrA=="
+  "integrity" "sha512-mTrMk/1ytQHtCY0oNO3dztafHYyGU88KL+jRxWuzfOmQb+4qqnWmI+gykvGp8usKZOM0H7keJHEbRaFiYA0VrA=="
   "resolved" "https://registry.npmjs.org/validate.io-integer-array/-/validate.io-integer-array-1.0.0.tgz"
   "version" "1.0.0"
   dependencies:
@@ -8556,14 +8591,14 @@
     "validate.io-integer" "^1.0.4"
 
 "validate.io-integer@^1.0.4":
-  "integrity" "sha1-FoSWSAuVviJH7EQ/IjPeT4mHgGg= sha512-22izsYSLojN/P6bppBqhgUDjCkr5RY2jd+N2a3DCAUey8ydvrZ/OkGvFPR7qfOpwR2LC5p4Ngzxz36g5Vgr/hQ=="
+  "integrity" "sha512-22izsYSLojN/P6bppBqhgUDjCkr5RY2jd+N2a3DCAUey8ydvrZ/OkGvFPR7qfOpwR2LC5p4Ngzxz36g5Vgr/hQ=="
   "resolved" "https://registry.npmjs.org/validate.io-integer/-/validate.io-integer-1.0.5.tgz"
   "version" "1.0.5"
   dependencies:
     "validate.io-number" "^1.0.3"
 
 "validate.io-number@^1.0.3":
-  "integrity" "sha1-9j/+2iSL8opnqNSODjtGGhZluvg= sha512-kRAyotcbNaSYoDnXvb4MHg/0a1egJdLwS6oJ38TJY7aw9n93Fl/3blIXdyYvPOp55CNxywooG/3BcrwNrBpcSg=="
+  "integrity" "sha512-kRAyotcbNaSYoDnXvb4MHg/0a1egJdLwS6oJ38TJY7aw9n93Fl/3blIXdyYvPOp55CNxywooG/3BcrwNrBpcSg=="
   "resolved" "https://registry.npmjs.org/validate.io-number/-/validate.io-number-1.0.3.tgz"
   "version" "1.0.3"
 

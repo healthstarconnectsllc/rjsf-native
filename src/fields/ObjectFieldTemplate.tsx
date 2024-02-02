@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { ObjectFieldTemplateProps } from '@rjsf/core';
+import { ObjectFieldTemplateProps } from '@rjsf/utils'
 import DescriptionField from './DescriptionField';
 import RootTitleField from './RootTitleField';
 
@@ -14,7 +14,7 @@ const ObjectFieldTemplate = ({
   return (
     <View>
       {
-        (uiSchema[ 'ui:title' ] || title) ? <RootTitleField title={ title } required={ required }/> : null
+        (uiSchema?.[ 'ui:title' ] || title) ? <RootTitleField title={ title } required={ required }/> : null
       }
       {
         description ? <DescriptionField description={ description }/> : null

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ErrorListProps } from '@rjsf/core';
+import { ErrorListProps } from '@rjsf/utils';
 import { StyleSheet, Text, View } from 'react-native';
 
 const ErrorList = ({ errors }: ErrorListProps) => (

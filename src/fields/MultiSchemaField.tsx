@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { FieldProps } from '@rjsf/core';
-import utils from '@rjsf/utils'
-import { JSONSchema7 } from 'json-schema';
+import React, { useEffect, useState } from "react";
+import { StyleSheet, View } from "react-native";
+import utils, { SchemaUtilsType, FieldProps } from "@rjsf/utils";
 
 const {
   getUiOptions,
@@ -10,22 +8,20 @@ const {
   guessType,
   retrieveSchema,
   getDefaultFormState,
-  getMatchingOption,
 } = utils;
 
 const _getMatchingOption = ({
-                              formData,
-                              options,
-                              rootSchema,
-                              selectedOptionIndex,
-                            }: {
-  formData: FieldProps['formData'],
-  options: Array<any>,
-  rootSchema: JSONSchema7,
-  selectedOptionIndex: number
+  formData,
+  options,
+  selectedOptionIndex,
+  schemaUtils,
+}: {
+  formData: FieldProps["formData"];
+  options: Array<any>;
+  selectedOptionIndex: number;
+  schemaUtils: SchemaUtilsType;
 }): number => {
-
-  let option = getMatchingOption(formData, options, rootSchema);
+  let option = schemaUtils.getFirstMatchingOption(formData, options);
   if (option !== 0) {
     return option;
   }
@@ -35,57 +31,62 @@ const _getMatchingOption = ({
 };
 
 const AnyOfField = ({
-                      formData,
-                      options,
-                      registry,
-                      onChange,
-                      baseType,
-                      disabled,
-                      errorSchema,
-                      idPrefix,
-                      idSchema,
-                      onBlur,
-                      onFocus,
-                      uiSchema,
-                      schema,
-                    }: FieldProps) => {
-
+  formData,
+  options,
+  registry,
+  onChange,
+  baseType,
+  disabled,
+  errorSchema,
+  idPrefix,
+  idSchema,
+  onBlur,
+  onFocus,
+  uiSchema,
+  schema,
+}: FieldProps) => {
   // rootSchema is in registry but is not defined FieldProps
   // @ts-ignore
-  const { rootSchema } = registry;
-  const [ selectedOptionIndex, setSelectedOptionIndex ] = useState(_getMatchingOption({
-    formData,
-    options,
-    rootSchema,
-    selectedOptionIndex: 0,
-  }));
+  const { rootSchema, schemaUtils } = registry;
+  const [ selectedOptionIndex, setSelectedOptionIndex ] = useState(
+    _getMatchingOption({
+      formData,
+      options,
+
+      selectedOptionIndex: 0,
+      schemaUtils,
+    })
+  );
 
   useEffect(() => {
     const matchingOption = _getMatchingOption({
       formData,
       options,
-      rootSchema,
+
       selectedOptionIndex,
+      schemaUtils,
     });
     if (matchingOption !== selectedOptionIndex) {
       setSelectedOptionIndex(matchingOption);
     }
-  }, [ formData, setSelectedOptionIndex, selectedOptionIndex, options, rootSchema ]);
+  }, [
+    formData,
+    setSelectedOptionIndex,
+    selectedOptionIndex,
+    options,
+    schemaUtils,
+  ]);
 
   const onOptionChange = (value: string) => {
     const selected = parseInt(value, 10);
-    const newOption = retrieveSchema(
-      options[ selected ],
-      rootSchema,
-      formData,
-    );
+    const newOption = retrieveSchema(options[selected], rootSchema, formData);
 
     // If the new value is of type object and the current data is an object,
     // discard properties added using the old option.
     let newFormData;
     if (
-      guessType(formData) === 'object' &&
-      (newOption.type === 'object' || newOption.properties)
+      guessType(formData) === "object" &&
+      (newOption.type === "object" || newOption.properties)
     ) {
       newFormData = Object.assign({}, formData);
 
@@ -97,7 +98,7 @@ const AnyOfField = ({
         if (option.properties) {
           for (const key in option.properties) {
             if (newFormData.hasOwnProperty(key)) {
-              delete newFormData[ key ];
+              delete newFormData[key];
             }
           }
         }
@@ -105,7 +106,7 @@ const AnyOfField = ({
     }
     // Call getDefaultFormState to make sure defaults are populated on change.
     onChange(
-      getDefaultFormState(options[ selectedOptionIndex ], newFormData, rootSchema),
+      getDefaultFormState(options[selectedOptionIndex], newFormData, rootSchema)
     );
 
     setSelectedOptionIndex(parseInt(value, 10));
@@ -114,9 +115,9 @@ const AnyOfField = ({
   const SchemaField = registry.fields.SchemaField;
   const { widgets } = registry;
   // @ts-ignore
-  const { widget = 'select', ...uiOptions } = getUiOptions(uiSchema);
-  const Widget = getWidget({ type: 'number' }, widget, widgets);
-  const selectedOption = options[ selectedOptionIndex ] || null;
+  const { widget = "select", ...uiOptions } = getUiOptions(uiSchema);
+  const Widget = getWidget({ type: "number" }, widget, widgets);
+  const selectedOption = options[selectedOptionIndex] || null;
   let optionSchema;
 
   if (selectedOption) {
@@ -127,48 +128,49 @@ const AnyOfField = ({
       : Object.assign({}, selectedOption, { type: baseType });
   }
 
-  const enumOptions = options.map((option: { [ name: string ]: any }, index: number) => ({
-    label: option.title || `Option ${ index + 1 }`,
-    value: index,
-  }));
+  const enumOptions = options.map(
+    (option: { [name: string]: any }, index: number) => ({
+      label: option.title || `Option ${index + 1}`,
+      value: index,
+    })
+  );
 
   return (
-    <View style={ styles.container }>
-      <View style={ styles.formGroup }>
-        {/* @ts-ignore */ }
+    <View style={styles.container}>
+      <View style={styles.formGroup}>
+        {/* @ts-ignore */}
         <Widget
-          id={ `${ idSchema.$id }${
-            schema.oneOf ? '__oneof_select' : '__anyof_select'
-          }` }
-          schema={ { type: 'number', default: 0 } }
-          onChange={ onOptionChange }
-          onBlur={ onBlur }
-          onFocus={ onFocus }
-          value={ selectedOptionIndex }
-          options={ { enumOptions } }
-          { ...uiOptions }
+          id={`${idSchema.$id}${
+            schema.oneOf ? "__oneof_select" : "__anyof_select"
+          }`}
+          schema={{ type: "number", default: 0 }}
+          onChange={onOptionChange}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          value={selectedOptionIndex}
+          options={{ enumOptions }}
+          {...uiOptions}
         />
       </View>
 
-      { selectedOption !== null && (
+      {selectedOption !== null && (
         /* @ts-ignore */
         <SchemaField
-          schema={ optionSchema }
-          uiSchema={ uiSchema }
-          errorSchema={ errorSchema }
-          idSchema={ idSchema }
-          idPrefix={ idPrefix }
-          formData={ formData }
-          onChange={ onChange }
-          onBlur={ onBlur }
-          onFocus={ onFocus }
-          registry={ registry }
-          disabled={ disabled }
+          schema={optionSchema}
+          uiSchema={uiSchema}
+          errorSchema={errorSchema}
+          idSchema={idSchema}
+          idPrefix={idPrefix}
+          formData={formData}
+          onChange={onChange}
+          onBlur={onBlur}
+          onFocus={onFocus}
+          registry={registry}
+          disabled={disabled}
         />
-      ) }
+      )}
     </View>
   );
-
 };
 export default AnyOfField;
 
@@ -177,13 +179,13 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: '#979B9E',
+    borderColor: "#979B9E",
     padding: 15,
   },
   formGroup: {
     paddingBottom: 15,
     marginBottom: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#EEEEEE',
+    borderBottomColor: "#EEEEEE",
   },
 });

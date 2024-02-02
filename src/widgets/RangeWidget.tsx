@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import {  WidgetProps } from '@rjsf/core';
-import utils from '@rjsf/utils'
+import utils, { WidgetProps } from '@rjsf/utils';
 import { useFormContext } from '../FormContext';
 import { SliderComponent } from '@react-native-community/slider';
 

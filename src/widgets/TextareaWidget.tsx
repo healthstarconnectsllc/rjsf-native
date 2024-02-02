@@ -1,4 +1,4 @@
-import { WidgetProps } from '@rjsf/core';
+import { WidgetProps } from '@rjsf/utils';
 import TextWidget from './TextWidget';
 import React from 'react';
 

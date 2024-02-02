@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { WidgetProps } from '@rjsf/core';
+import { WidgetProps } from '@rjsf/utils';
 import { useFormContext } from '../FormContext';
 
 const RadioWidget = ({
@@ -13,7 +13,7 @@ const RadioWidget = ({
                      }: WidgetProps) => {
   const { enumOptions, enumDisabled } = options;
   const { theme, radioLabelMapping } = useFormContext();
-  const hasErrors = rawErrors?.length > 0;
+  const hasErrors = rawErrors?.length && rawErrors?.length > 0;
 
   const onPress = (newValue: any) => () => onChange(newValue);
 

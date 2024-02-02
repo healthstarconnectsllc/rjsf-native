@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, TextInput, TextInputIOSProps } from 'react-native';
-import { WidgetProps } from '@rjsf/core';
+import { WidgetProps } from '@rjsf/utils';
 import { useFormContext } from '../FormContext';
 
 type TextWidgetProps = WidgetProps & {
@@ -30,7 +30,7 @@ const TextWidget = ({
   const [ focused, setFocused ] = useState(false);
 
   const themedStyle = {
-    borderColor: rawErrors?.length > 0 ? theme.errorColor : focused ? theme.highlightColor : theme.borderColor,
+    borderColor: (rawErrors?.length && rawErrors.length > 0) ? theme.errorColor : focused ? theme.highlightColor : theme.borderColor,
     borderWidth: focused ? 2 : 1,
     color: theme.textColor,
   };
