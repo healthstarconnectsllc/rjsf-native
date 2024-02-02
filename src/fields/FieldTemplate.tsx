@@ -7,40 +7,45 @@ import { useFormContext } from "../FormContext";
 
 const FieldTemplate = ({
   label,
-  children,
+
   displayLabel,
   rawErrors = [],
   rawHelp,
   required,
   rawDescription,
+  children,
 }: FieldTemplateProps) => {
   const { theme } = useFormContext();
   const hasErrors = rawErrors?.length > 0;
 
   return (
     <View style={styles.container}>
-      {displayLabel && label ? (
-        <TitleField title={label} required={required} error={hasErrors} />
-      ) : null}
-      {displayLabel && rawDescription ? (
-        <DescriptionField description={rawDescription} />
-      ) : null}
-      {children}
+      <>
+        {displayLabel && label ? (
+          <TitleField title={label} required={required} error={hasErrors} />
+        ) : null}
+        {displayLabel && rawDescription ? (
+          <DescriptionField description={rawDescription} />
+        ) : null}
+        {children}
 
-      {hasErrors &&
-        rawErrors.map((error, i: number) => (
-          <Text
-            key={i}
-            style={[
-              styles.description,
-              styles.error,
-              { color: theme.errorColor },
-            ]}
-          >
-            {"\u2022"} {error}
-          </Text>
-        ))}
-      {(rawHelp?.length && rawHelp.length > 0) && <Text style={styles.description}>{rawHelp}</Text>}
+        {hasErrors &&
+          rawErrors.map((error, i: number) => (
+            <Text
+              key={i}
+              style={[
+                styles.description,
+                styles.error,
+                { color: theme.errorColor },
+              ]}
+            >
+              {"\u2022"} {error}
+            </Text>
+          ))}
+        {rawHelp?.length && rawHelp.length > 0 && (
+          <Text style={styles.description}>{rawHelp}</Text>
+        )}
+      </>
     </View>
   );
 };

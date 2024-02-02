@@ -18,25 +18,27 @@
     "prepublish": "yarn build"
   },
   "peerDependencies": {
-    "@react-native-community/slider": "*",
+    "@react-native-community/slider": ">= 4.0.0",
     "@rjsf/core": "5.16.1",
     "@rjsf/utils": "5.16.1",
     "react": ">=17",
     "react-native": ">=0.70.0"
   },
   "devDependencies": {
-    "@react-native-community/eslint-config": "^2.0.0",
-    "@react-native-community/slider": "^3.0.0",
-    "@rjsf/core": "^2.2.0",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "@react-native-community/slider": "4.5.0",
+    "@rjsf/core": "5.16.1",
+    "@rjsf/utils": "5.16.1",
     "@rollup/plugin-image": "^2.0.5",
     "@types/json-schema": "^7.0.5",
-    "@types/react": "^16.9.41",
-    "@types/react-native": "^0.62.16",
+    "@types/react": "17.0.75",
+    "@types/react-native": "0.71.3",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
     "husky": "^4.2.5",
     "rimraf": "^3.0.2",
-    "tsdx": "^0.13.2",
+    "tsdx": "0.14.1",
     "tslib": "^2.0.0",
-    "typescript": "^3.9.6"
+    "typescript": "5.3.3"
   },
   "keywords": [
     "react-native",
@@ -48,5 +50,9 @@
     "form",
     "react",
     "rjsf-native"
-  ]
+  ],
+  "dependencies": {
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3"
+  }
 }

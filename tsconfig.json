@@ -1,7 +1,7 @@
 {
   "include": ["src", "types"],
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES6",
     "module": "esnext",
     "lib": ["esnext"],
     "importHelpers": true,
@@ -22,9 +22,11 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
-      "*": ["src/*", "node_modules/*"]
+      "*": ["src/*", "node_modules/*"],
+      "react": ["./node_modules/@types/react"],
+      "react-native": ["./node_modelus/@types/react-native"]
     },
-    "jsx": "react",
+    "jsx": "react-native",
     "esModuleInterop": true,
     "allowJs": true
   }

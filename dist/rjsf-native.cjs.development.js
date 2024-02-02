@@ -35,11 +35,11 @@ var TitleField = function TitleField(_ref) {
   var _useFormContext = useFormContext(),
     requiredTitle = _useFormContext.requiredTitle,
     theme = _useFormContext.theme;
-  return React__default.createElement(reactNative.Text, {
+  return /*#__PURE__*/React__default.createElement(reactNative.Text, {
     style: [styles.title, {
       color: error ? theme.errorColor : theme.textColor
     }]
-  }, title, required && React__default.createElement(reactNative.Text, {
+  }, title, required && /*#__PURE__*/React__default.createElement(reactNative.Text, {
     style: {
       color: theme.errorColor
     }
@@ -59,7 +59,7 @@ var DescriptionField = function DescriptionField(_ref) {
   var _useFormContext = useFormContext(),
     theme = _useFormContext.theme;
   if (description) {
-    return React__default.createElement(reactNative.Text, {
+    return /*#__PURE__*/React__default.createElement(reactNative.Text, {
       style: [styles$1.description, {
         color: theme.textColor
       }]
@@ -77,34 +77,34 @@ var styles$1 = /*#__PURE__*/reactNative.StyleSheet.create({
 
 var FieldTemplate = function FieldTemplate(_ref) {
   var label = _ref.label,
-    children = _ref.children,
     displayLabel = _ref.displayLabel,
     _ref$rawErrors = _ref.rawErrors,
     rawErrors = _ref$rawErrors === void 0 ? [] : _ref$rawErrors,
     rawHelp = _ref.rawHelp,
     required = _ref.required,
-    rawDescription = _ref.rawDescription;
+    rawDescription = _ref.rawDescription,
+    children = _ref.children;
   var _useFormContext = useFormContext(),
     theme = _useFormContext.theme;
-  var hasErrors = (rawErrors === null || rawErrors === void 0 ? void 0 : rawErrors.length) > 0;
-  return React__default.createElement(reactNative.View, {
+  var hasErrors = (rawErrors == null ? void 0 : rawErrors.length) > 0;
+  return /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: styles$2.container
-  }, displayLabel && label ? React__default.createElement(TitleField, {
+  }, /*#__PURE__*/React__default.createElement(React__default.Fragment, null, displayLabel && label ? /*#__PURE__*/React__default.createElement(TitleField, {
     title: label,
     required: required,
     error: hasErrors
-  }) : null, displayLabel && rawDescription ? React__default.createElement(DescriptionField, {
+  }) : null, displayLabel && rawDescription ? /*#__PURE__*/React__default.createElement(DescriptionField, {
     description: rawDescription
   }) : null, children, hasErrors && rawErrors.map(function (error, i) {
-    return React__default.createElement(reactNative.Text, {
+    return /*#__PURE__*/React__default.createElement(reactNative.Text, {
       key: i,
       style: [styles$2.description, styles$2.error, {
         color: theme.errorColor
       }]
     }, "\u2022", " ", error);
-  }), (rawHelp === null || rawHelp === void 0 ? void 0 : rawHelp.length) && rawHelp.length > 0 && React__default.createElement(reactNative.Text, {
+  }), (rawHelp == null ? void 0 : rawHelp.length) && rawHelp.length > 0 && /*#__PURE__*/React__default.createElement(reactNative.Text, {
     style: styles$2.description
-  }, rawHelp));
+  }, rawHelp)));
 };
 var styles$2 = /*#__PURE__*/reactNative.StyleSheet.create({
   container: {
@@ -125,11 +125,11 @@ var RootTitleField = function RootTitleField(_ref) {
   var _useFormContext = useFormContext(),
     theme = _useFormContext.theme,
     requiredTitle = _useFormContext.requiredTitle;
-  return React__default.createElement(reactNative.Text, {
+  return /*#__PURE__*/React__default.createElement(reactNative.Text, {
     style: [styles$3.title, {
       color: theme.textColor
     }]
-  }, title, required && React__default.createElement(reactNative.Text, {
+  }, title, required && /*#__PURE__*/React__default.createElement(reactNative.Text, {
     style: {
       color: theme.errorColor
     }
@@ -152,23 +152,23 @@ var ObjectFieldTemplate = function ObjectFieldTemplate(_ref) {
     properties = _ref.properties,
     required = _ref.required,
     uiSchema = _ref.uiSchema;
-  return React__default.createElement(reactNative.View, null, uiSchema !== null && uiSchema !== void 0 && uiSchema['ui:title'] || title ? React__default.createElement(RootTitleField, {
+  return /*#__PURE__*/React__default.createElement(reactNative.View, null, uiSchema != null && uiSchema["ui:title"] || title ? /*#__PURE__*/React__default.createElement(RootTitleField, {
     title: title,
     required: required
-  }) : null, description ? React__default.createElement(DescriptionField, {
+  }) : null, description ? /*#__PURE__*/React__default.createElement(DescriptionField, {
     description: description
   }) : null, properties.map(function (element, index) {
-    return React__default.createElement(reactNative.View, {
+    return /*#__PURE__*/React__default.createElement(reactNative.View, {
       key: index
     }, element.content);
   }));
 };
 
-const img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwCAYAAABnjuimAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAKqADAAQAAAABAAAAMAAAAADdgggSAAACWUlEQVRYCe2UP08UURTFz9ssWbMFFoZkKyoKDKXllm5lInY4u+DGkGjHB9DGsdCe2AExRiUSCxONsTBIYuFH2GhBRUVipQWBiFzvHdmwAztz310GluLdZLJv3v1zfnvmzQBFR0RPINeFDSLHgIu4TZRcspa9gqKYQTGV8APLIMynuByeYxL3ELuD1P4AN6cHjamM73jF2lGG/hqu4g7D7mfkvbZPB7pAFfzEW3ZyOlfN4QPGMINnbi+3Lic5OOh9quIX3vPsRs783tQ6LuMWltxO76bvejDQWRrFPj6xSN1X6LDuG8q4gVX329iHkrUBbbqCv9jgPiukSNWTXplhDJujd6mGXazzmZwy6qTLHTq4xEfmhdtOJ7Lv/EHbNI49fOFRE9njTJlNVHAdL92WT5cf6BxN4E8COe4z1FCzhRGGfe02tR4dtElTOODHDdS0YQPmt/lNaeCN6+T1579MLbrG5/HrGUIKWy3REK2cyAadpTo7ucFDzG9ojl7/lGiIlmhmRH/QFjX4O/mZIUcz+orfFi3RFO0+cRK0STf5W/eRa6t96s96q5poC8OxSIO2KOJH8I5rKsfqzvO2kjAIS08cgUY0zwWrnCv35Ie1LCcswnQY/0GbtMDncYWvI/BuxbB+hUWYhI3D8eIB0z8dFo+XbgkP9Q9+d1JEMf/DR93bQn4dHmPNxT6zLs6jVmgDqGKQOR0cNVumNARHFYPM6eCo2TKlITiqGGROB0fNlikNwVHFIHM6OGq2TGkIjioGmdPBUbNlSkNwVDHInA6Omi1TGoKjikHm9D9o2I53D1iVsAAAAABJRU5ErkJggg==";
+var img = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwCAYAAABnjuimAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAKqADAAQAAAABAAAAMAAAAADdgggSAAACWUlEQVRYCe2UP08UURTFz9ssWbMFFoZkKyoKDKXllm5lInY4u+DGkGjHB9DGsdCe2AExRiUSCxONsTBIYuFH2GhBRUVipQWBiFzvHdmwAztz310GluLdZLJv3v1zfnvmzQBFR0RPINeFDSLHgIu4TZRcspa9gqKYQTGV8APLIMynuByeYxL3ELuD1P4AN6cHjamM73jF2lGG/hqu4g7D7mfkvbZPB7pAFfzEW3ZyOlfN4QPGMINnbi+3Lic5OOh9quIX3vPsRs783tQ6LuMWltxO76bvejDQWRrFPj6xSN1X6LDuG8q4gVX329iHkrUBbbqCv9jgPiukSNWTXplhDJujd6mGXazzmZwy6qTLHTq4xEfmhdtOJ7Lv/EHbNI49fOFRE9njTJlNVHAdL92WT5cf6BxN4E8COe4z1FCzhRGGfe02tR4dtElTOODHDdS0YQPmt/lNaeCN6+T1579MLbrG5/HrGUIKWy3REK2cyAadpTo7ucFDzG9ojl7/lGiIlmhmRH/QFjX4O/mZIUcz+orfFi3RFO0+cRK0STf5W/eRa6t96s96q5poC8OxSIO2KOJH8I5rKsfqzvO2kjAIS08cgUY0zwWrnCv35Ie1LCcswnQY/0GbtMDncYWvI/BuxbB+hUWYhI3D8eIB0z8dFo+XbgkP9Q9+d1JEMf/DR93bQn4dHmPNxT6zLs6jVmgDqGKQOR0cNVumNARHFYPM6eCo2TKlITiqGGROB0fNlikNwVHFIHM6OGq2TGkIjioGmdPBUbNlSkNwVDHInA6Omi1TGoKjikHm9D9o2I53D1iVsAAAAABJRU5ErkJggg==";
 
-const img$1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwCAYAAABnjuimAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAKqADAAQAAAABAAAAMAAAAADdgggSAAACQ0lEQVRYCe2Yv0scURDHZ2IS0SIpAiH/gqS0FBGCRJCQQIq4ntgItiG1Fp6F1uHsIoRgYnKkU0EQbC1T2lldZWNjIQgm4/e7avy1t/tub2KueAPHzXs77zuf++7bx3IqoZFYVUzmQsuD6lTmpa7VkNp7IUWdUBNBve9CdDQ66u2At17co9FRbwe89eIejY56O+CtF/dodNTbAW+9uEejo94OeOvFPRod9XbAW08lsRn8p7TgLeyqpzKrqWBi7wH7EfnZ2LVLW2IGog/4I612CZbYFCSXAdwZJ4HKH/BMA/Izf+olKEcVS+S3fEV2n8P/GCfSJZPyXesXDNdBOZvYa7j6E1n3RdEdfx/Dvndwcv1q39ugvFqxYTi7hqz3avEd5Edw8g2c3L7ZKxuUVRM2ANhNuPvo5qJ/MlY5BOSorOpOln5zUFZXrB9beguwT7IWu82pHOARHoGTv5pp5oNy1bg9ByxvxbNmIm3O7wNyWH7obp5O8VFEgQcyCJFGnlDJa41UuwCS2sWgrPqmezgDCLvHoVOcaVI7IMJAKbSiDekBrEruLQroydN7N9WiZmCEg1Lwi+7LQxlCo6abvrAv11KDWi1Ea6AUXtEDHCMvkGUeIwW9d9K11GgxWgdlg1U9lMfyEtmtgzmn/3a6hmtLRDlQNvqkR/JUXiHbCOi7kdZyTckoD8qGS3osffIW2d+XhwyOelrD2jaiPVA2ruoJQCbwgKWvY9dYOMdrrOmYMFMZsxo+dv6pCec6NhJbxKviojffKUVeesbX1YC1AAAAAElFTkSuQmCC";
+var img$1 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAwCAYAAABnjuimAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAKqADAAQAAAABAAAAMAAAAADdgggSAAACQ0lEQVRYCe2Yv0scURDHZ2IS0SIpAiH/gqS0FBGCRJCQQIq4ntgItiG1Fp6F1uHsIoRgYnKkU0EQbC1T2lldZWNjIQgm4/e7avy1t/tub2KueAPHzXs77zuf++7bx3IqoZFYVUzmQsuD6lTmpa7VkNp7IUWdUBNBve9CdDQ66u2At17co9FRbwe89eIejY56O+CtF/dodNTbAW+9uEejo94OeOvFPRod9XbAW08lsRn8p7TgLeyqpzKrqWBi7wH7EfnZ2LVLW2IGog/4I612CZbYFCSXAdwZJ4HKH/BMA/Izf+olKEcVS+S3fEV2n8P/GCfSJZPyXesXDNdBOZvYa7j6E1n3RdEdfx/Dvndwcv1q39ugvFqxYTi7hqz3avEd5Edw8g2c3L7ZKxuUVRM2ANhNuPvo5qJ/MlY5BOSorOpOln5zUFZXrB9beguwT7IWu82pHOARHoGTv5pp5oNy1bg9ByxvxbNmIm3O7wNyWH7obp5O8VFEgQcyCJFGnlDJa41UuwCS2sWgrPqmezgDCLvHoVOcaVI7IMJAKbSiDekBrEruLQroydN7N9WiZmCEg1Lwi+7LQxlCo6abvrAv11KDWi1Ea6AUXtEDHCMvkGUeIwW9d9K11GgxWgdlg1U9lMfyEtmtgzmn/3a6hmtLRDlQNvqkR/JUXiHbCOi7kdZyTckoD8qGS3osffIW2d+XhwyOelrD2jaiPVA2ruoJQCbwgKWvY9dYOMdrrOmYMFMZsxo+dv6pCec6NhJbxKviojffKUVeesbX1YC1AAAAAElFTkSuQmCC";
 
-const img$2 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAABCCAYAAAAL1LXDAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAPKADAAQAAAABAAAAQgAAAADu9ZXIAAADnklEQVRoBe1bP2/TQBR/z3VQSTp0qgQFMSAmJmBDfAWoksLADio7/Rj9AFRiZ4Am/PkKqBtlYuyAIEXqxNCECkKOe04sFPud7fP54otyWSK/e/fe73c/39ln+yFU+BNC4HBz+z6g6CDgXRBwSYBY00kh+50Bwg/Z7xAEdpv9gw+IKHRiZPliVqNO2+9rndt/RvAShLil0y/fF48aDXh64Wv3KN8336MSwoOrD7dwPH4lFb6Yn1LfQyr8SwTB49a3N+/0e8/2MCZMyo5G8NEW2RgukQ5DuGeqdBAHLPNPc5ZOY9tkCRvlmOYyEsmIcLRAVT5nM4Ze5opyZrjkNYV5DpntcjWWK3HqRyutQNhtrooeHvdOUw4ZBnG9vTE8x7Zcl/fYFZ5yArzPCJHZZESYLj0SVCoBkW31u/uphgKG6QDtDzYlLwEvkl2iy13SqHFsdErTdZbLRcpydh2bMoYiZ9HYRoTZU05m1j2NObCqGKqcXAzOZkSYC+i6bekIo7j5aO3859+9sYC2XCU2XFeoHD48DRB6q+sru+GErNgpF2hReokNKeiO5ArBRNlFAW6Gk7gu3RwO5N7zrdm4LU5vmsdhc33luTy3xbIsWsqdx+ByO33PKMVsnfSUferQWhfnEs7hOmSpMadXuMbBn0tqr/BchrnGJF7hGgd/LqmNnmmpEM5uOQHirRl+eX3G9dH152IUtVkhnNxyxlszCeoZB0zXn4tR1GZlDnNbTs4Wg+TaOFvsb/JvhTD/5CTraQrXxtlMqE76WiJsDsxWBE/Y1si6Etcr7IoStnB4hW2NrCtxvcKuKGELh1fY1si6Etcr7IoStnB4hW2NrCtxvcKuKGELhyWFkfn6jrPFtLg2zhb7l/+3Q5h5yU5PLpUwdf2VgfIbrDy1nH3J/v8xLfR5QLr+fJRiVuXLbd0XzcXSVe+li9POKV09r8oiesKVDaWjgbzCjgpTGSylwlHBFJOGPtFnzLWYVFhU2AmkkjBVh3EsqB6Bs9dhU2JRYCeMyhsP+eX5oWy/kSRCxRdUj1CmgCMZq+zxbCFIOsoUe7pBWjJuPDoP5FtA40owNqt1I261Trps5YuSMBVhDa9sf6q+ltAyW8TPze8Hd1QFmso5TB0aITyhEjjLECsLT1inmNnvRCmRkjA1Up0fFTkuAmnCSFjzahMzCRNpquikIkeQpwodO/mT2AhjkepT5RxOEovmtGExdDJm2ePoOluyqPof8OheyMKWxj8AAAAASUVORK5CYII=";
+var img$2 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAABCCAYAAAAL1LXDAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAPKADAAQAAAABAAAAQgAAAADu9ZXIAAADnklEQVRoBe1bP2/TQBR/z3VQSTp0qgQFMSAmJmBDfAWoksLADio7/Rj9AFRiZ4Am/PkKqBtlYuyAIEXqxNCECkKOe04sFPud7fP54otyWSK/e/fe73c/39ln+yFU+BNC4HBz+z6g6CDgXRBwSYBY00kh+50Bwg/Z7xAEdpv9gw+IKHRiZPliVqNO2+9rndt/RvAShLil0y/fF48aDXh64Wv3KN8336MSwoOrD7dwPH4lFb6Yn1LfQyr8SwTB49a3N+/0e8/2MCZMyo5G8NEW2RgukQ5DuGeqdBAHLPNPc5ZOY9tkCRvlmOYyEsmIcLRAVT5nM4Ze5opyZrjkNYV5DpntcjWWK3HqRyutQNhtrooeHvdOUw4ZBnG9vTE8x7Zcl/fYFZ5yArzPCJHZZESYLj0SVCoBkW31u/uphgKG6QDtDzYlLwEvkl2iy13SqHFsdErTdZbLRcpydh2bMoYiZ9HYRoTZU05m1j2NObCqGKqcXAzOZkSYC+i6bekIo7j5aO3859+9sYC2XCU2XFeoHD48DRB6q+sru+GErNgpF2hReokNKeiO5ArBRNlFAW6Gk7gu3RwO5N7zrdm4LU5vmsdhc33luTy3xbIsWsqdx+ByO33PKMVsnfSUferQWhfnEs7hOmSpMadXuMbBn0tqr/BchrnGJF7hGgd/LqmNnmmpEM5uOQHirRl+eX3G9dH152IUtVkhnNxyxlszCeoZB0zXn4tR1GZlDnNbTs4Wg+TaOFvsb/JvhTD/5CTraQrXxtlMqE76WiJsDsxWBE/Y1si6Etcr7IoStnB4hW2NrCtxvcKuKGELh1fY1si6Etcr7IoStnB4hW2NrCtxvcKuKGELhyWFkfn6jrPFtLg2zhb7l/+3Q5h5yU5PLpUwdf2VgfIbrDy1nH3J/v8xLfR5QLr+fJRiVuXLbd0XzcXSVe+li9POKV09r8oiesKVDaWjgbzCjgpTGSylwlHBFJOGPtFnzLWYVFhU2AmkkjBVh3EsqB6Bs9dhU2JRYCeMyhsP+eX5oWy/kSRCxRdUj1CmgCMZq+zxbCFIOsoUe7pBWjJuPDoP5FtA40owNqt1I261Trps5YuSMBVhDa9sf6q+ltAyW8TPze8Hd1QFmso5TB0aITyhEjjLECsLT1inmNnvRCmRkjA1Up0fFTkuAmnCSFjzahMzCRNpquikIkeQpwodO/mT2AhjkepT5RxOEovmtGExdDJm2ePoOluyqPof8OheyMKWxj8AAAAASUVORK5CYII=";
 
 var ArrayFieldTemplate = function ArrayFieldTemplate(props) {
   var schema = props.schema,
@@ -176,9 +176,9 @@ var ArrayFieldTemplate = function ArrayFieldTemplate(props) {
   var schemaUtils = registry.schemaUtils;
   var isMultiSelect = schemaUtils.isMultiSelect(schema);
   if (isMultiSelect) {
-    return React__default.createElement(DefaultFixedArrayFieldTemplate, Object.assign({}, props));
+    return /*#__PURE__*/React__default.createElement(DefaultFixedArrayFieldTemplate, props);
   } else {
-    return React__default.createElement(DefaultNormalArrayFieldTemplate, Object.assign({}, props));
+    return /*#__PURE__*/React__default.createElement(DefaultNormalArrayFieldTemplate, props);
   }
 };
 var ArrayFieldTitle = function ArrayFieldTitle(_ref) {
@@ -187,7 +187,7 @@ var ArrayFieldTitle = function ArrayFieldTitle(_ref) {
   if (!title) {
     return null;
   }
-  return React__default.createElement(TitleField, {
+  return /*#__PURE__*/React__default.createElement(TitleField, {
     title: title,
     required: required
   });
@@ -197,48 +197,48 @@ var ArrayFieldDescription = function ArrayFieldDescription(_ref2) {
   if (!description) {
     return null;
   }
-  return React__default.createElement(DescriptionField, {
+  return /*#__PURE__*/React__default.createElement(DescriptionField, {
     description: description
   });
 };
 // Used in the two templates
 var DefaultArrayItem = function DefaultArrayItem(props) {
-  return React__default.createElement(reactNative.View, {
+  return /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: styles$4.arrayItem,
     key: props.index
-  }, React__default.createElement(reactNative.View, {
+  }, /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: styles$4.card
-  }, props.children), React__default.createElement(reactNative.View, {
+  }, props.children), /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: styles$4.actionRow
-  }, props.hasMoveUp && React__default.createElement(reactNative.TouchableOpacity, {
+  }, props.hasMoveUp && /*#__PURE__*/React__default.createElement(reactNative.TouchableOpacity, {
     style: styles$4.actionButton,
     onPress: function onPress() {
       reactNative.LayoutAnimation.configureNext(reactNative.LayoutAnimation.Presets.easeInEaseOut);
       props.onReorderClick(props.index, props.index - 1)();
     }
-  }, React__default.createElement(reactNative.Image, {
+  }, /*#__PURE__*/React__default.createElement(reactNative.Image, {
     style: styles$4.image,
     source: {
       uri: img
     }
-  })), props.hasMoveDown && React__default.createElement(reactNative.TouchableOpacity, {
+  })), props.hasMoveDown && /*#__PURE__*/React__default.createElement(reactNative.TouchableOpacity, {
     style: styles$4.actionButton,
     onPress: function onPress() {
       props.onReorderClick(props.index, props.index + 1)();
     }
-  }, React__default.createElement(reactNative.Image, {
+  }, /*#__PURE__*/React__default.createElement(reactNative.Image, {
     style: styles$4.image,
     source: {
       uri: img$1
     }
-  })), props.hasRemove && React__default.createElement(reactNative.TouchableOpacity, {
+  })), props.hasRemove && /*#__PURE__*/React__default.createElement(reactNative.TouchableOpacity, {
     disabled: props.disabled || props.readonly,
     style: styles$4.actionButton,
     onPress: function onPress() {
       reactNative.LayoutAnimation.configureNext(reactNative.LayoutAnimation.Presets.easeInEaseOut);
       props.onDropIndexClick(props.index)();
     }
-  }, React__default.createElement(reactNative.Image, {
+  }, /*#__PURE__*/React__default.createElement(reactNative.Image, {
     style: styles$4.image,
     source: {
       uri: img$2
@@ -247,7 +247,7 @@ var DefaultArrayItem = function DefaultArrayItem(props) {
 };
 var AddButton = function AddButton(props) {
   var context = useFormContext();
-  return React__default.createElement(reactNative.TouchableOpacity, {
+  return /*#__PURE__*/React__default.createElement(reactNative.TouchableOpacity, {
     style: [styles$4.addButton, {
       backgroundColor: context.theme.primaryColor
     }],
@@ -256,44 +256,44 @@ var AddButton = function AddButton(props) {
       props.onPress(e);
     },
     disabled: props.disabled
-  }, React__default.createElement(reactNative.Text, {
+  }, /*#__PURE__*/React__default.createElement(reactNative.Text, {
     style: styles$4.addButtonText
   }, context.arrayAddTitle));
 };
 var DefaultFixedArrayFieldTemplate = function DefaultFixedArrayFieldTemplate(props) {
-  return React__default.createElement(reactNative.View, {
+  return /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: styles$4.container
-  }, React__default.createElement(ArrayFieldTitle, {
+  }, /*#__PURE__*/React__default.createElement(ArrayFieldTitle, {
     key: "array-field-title-" + props.idSchema.$id,
     idSchema: props.idSchema,
     title: props.uiSchema && props.uiSchema["ui:title"] || props.title,
     required: Boolean(props.required)
-  }), (props.uiSchema && props.uiSchema["ui:description"] || props.schema.description) && React__default.createElement(DescriptionField, {
+  }), (props.uiSchema && props.uiSchema["ui:description"] || props.schema.description) && /*#__PURE__*/React__default.createElement(DescriptionField, {
     description: props.uiSchema && props.uiSchema["ui:description"] || props.schema.description
-  }), React__default.createElement(reactNative.View, {
+  }), /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: styles$4.content
-  }, props.items && props.items.map(DefaultArrayItem)), props.canAdd && React__default.createElement(AddButton, {
+  }, props.items && props.items.map(DefaultArrayItem)), props.canAdd && /*#__PURE__*/React__default.createElement(AddButton, {
     disabled: props.disabled || props.readonly,
     onPress: props.onAddClick
   }));
 };
 var DefaultNormalArrayFieldTemplate = function DefaultNormalArrayFieldTemplate(props) {
-  return React__default.createElement(reactNative.View, {
+  return /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: styles$4.container
-  }, React__default.createElement(ArrayFieldTitle, {
+  }, /*#__PURE__*/React__default.createElement(ArrayFieldTitle, {
     key: "array-field-title-" + props.idSchema.$id,
     idSchema: props.idSchema,
     title: props.uiSchema && props.uiSchema["ui:title"] || props.title,
     required: Boolean(props.required)
-  }), (props.uiSchema && props.uiSchema["ui:description"] || props.schema.description) && React__default.createElement(ArrayFieldDescription, {
+  }), (props.uiSchema && props.uiSchema["ui:description"] || props.schema.description) && /*#__PURE__*/React__default.createElement(ArrayFieldDescription, {
     key: "array-field-description-" + props.idSchema.$id,
     idSchema: props.idSchema,
     description: props.uiSchema && props.uiSchema["ui:description"] || props.schema.description
-  }), React__default.createElement(reactNative.View, {
+  }), /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: styles$4.content
   }, props.items && props.items.map(function (p) {
     return DefaultArrayItem(p);
-  })), props.canAdd && React__default.createElement(AddButton, {
+  })), props.canAdd && /*#__PURE__*/React__default.createElement(AddButton, {
     disabled: props.disabled || props.readonly,
     onPress: props.onAddClick
   }));
@@ -348,12 +348,12 @@ var styles$4 = /*#__PURE__*/reactNative.StyleSheet.create({
 
 var ErrorList = function ErrorList(_ref) {
   var errors = _ref.errors;
-  return React__default.createElement(reactNative.View, {
+  return /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: styles$5.container
-  }, React__default.createElement(reactNative.Text, {
+  }, /*#__PURE__*/React__default.createElement(reactNative.Text, {
     style: styles$5.title
   }, "Errors"), errors.map(function (error, i) {
-    return React__default.createElement(reactNative.Text, {
+    return /*#__PURE__*/React__default.createElement(reactNative.Text, {
       style: styles$5.error,
       key: i
     }, error.stack);
@@ -377,6 +377,20 @@ var styles$5 = /*#__PURE__*/reactNative.StyleSheet.create({
   }
 });
 
+function _extends() {
+  _extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
 function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
@@ -449,7 +463,7 @@ var MockHTMLForm = /*#__PURE__*/function (_Component) {
   }
   var _proto2 = MockHTMLForm.prototype;
   _proto2.render = function render() {
-    return React__default.createElement(reactNative.View, null, this.props.children);
+    return /*#__PURE__*/React__default.createElement(reactNative.View, null, this.props.children);
   };
   _proto2.dispatchEvent = function dispatchEvent(e) {
     // @ts-ignore
@@ -485,11 +499,11 @@ var TextWidget = function TextWidget(_ref) {
     focused = _useState[0],
     setFocused = _useState[1];
   var themedStyle = {
-    borderColor: rawErrors !== null && rawErrors !== void 0 && rawErrors.length && rawErrors.length > 0 ? theme.errorColor : focused ? theme.highlightColor : theme.borderColor,
+    borderColor: rawErrors != null && rawErrors.length && rawErrors.length > 0 ? theme.errorColor : focused ? theme.highlightColor : theme.borderColor,
     borderWidth: focused ? 2 : 1,
     color: theme.textColor
   };
-  return React__default.createElement(reactNative.TextInput, {
+  return /*#__PURE__*/React__default.createElement(reactNative.TextInput, {
     multiline: multiline,
     placeholder: label,
     autoFocus: autofocus,
@@ -532,7 +546,7 @@ var styles$6 = /*#__PURE__*/reactNative.StyleSheet.create({
 });
 
 var TextareaWidget = function TextareaWidget(props) {
-  return React__default.createElement(TextWidget, Object.assign({}, props, {
+  return /*#__PURE__*/React__default.createElement(TextWidget, _extends({}, props, {
     multiline: true
   }));
 };
@@ -544,9 +558,9 @@ var CheckboxWidget = function CheckboxWidget(_ref) {
     label = _ref.label,
     onChange = _ref.onChange,
     schema = _ref.schema;
-  return React__default.createElement(React__default.Fragment, null, schema.description ? React__default.createElement(DescriptionField, {
+  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, schema.description ? /*#__PURE__*/React__default.createElement(DescriptionField, {
     description: schema.description
-  }) : null, React__default.createElement(CheckBoxComponent, {
+  }) : null, /*#__PURE__*/React__default.createElement(CheckBoxComponent, {
     label: schema.title || label,
     selected: value,
     onChange: onChange,
@@ -564,17 +578,17 @@ var CheckBoxComponent = function CheckBoxComponent(_ref2) {
     borderColor: selected ? theme.highlightColor : theme.textColor,
     backgroundColor: selected ? theme.highlightColor : 'transparent'
   };
-  return React__default.createElement(reactNative.TouchableOpacity, {
+  return /*#__PURE__*/React__default.createElement(reactNative.TouchableOpacity, {
     style: styles$7.container,
     disabled: disabled,
     onPress: function onPress() {
       return onChange(!selected);
     }
-  }, React__default.createElement(reactNative.View, {
+  }, /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: [styles$7.checkbox, themedStyle]
-  }, selected && React__default.createElement(reactNative.Text, {
+  }, selected && /*#__PURE__*/React__default.createElement(reactNative.Text, {
     style: styles$7.check
-  }, "\u2713")), React__default.createElement(reactNative.Text, {
+  }, "\u2713")), /*#__PURE__*/React__default.createElement(reactNative.Text, {
     style: styles$7.text
   }, label));
 };
@@ -636,10 +650,10 @@ var CheckboxesWidget = function CheckboxesWidget(_ref) {
       }
     };
   };
-  return React__default.createElement(reactNative.View, null, enumOptions.map(function (option, index) {
+  return /*#__PURE__*/React__default.createElement(reactNative.View, null, enumOptions.map(function (option, index) {
     var checked = value.indexOf(option.value) !== -1;
     var itemDisabled = enumDisabled && enumDisabled.indexOf(option.value) !== -1;
-    return React__default.createElement(CheckBoxComponent, {
+    return /*#__PURE__*/React__default.createElement(CheckBoxComponent, {
       key: index,
       onChange: _onChange(option),
       selected: checked,
@@ -650,7 +664,7 @@ var CheckboxesWidget = function CheckboxesWidget(_ref) {
 };
 
 var PasswordWidget = function PasswordWidget(props) {
-  return React__default.createElement(TextWidget, Object.assign({}, props, {
+  return /*#__PURE__*/React__default.createElement(TextWidget, _extends({}, props, {
     secureEntry: true
   }));
 };
@@ -667,31 +681,31 @@ var RadioWidget = function RadioWidget(_ref) {
   var _useFormContext = useFormContext(),
     theme = _useFormContext.theme,
     radioLabelMapping = _useFormContext.radioLabelMapping;
-  var hasErrors = (rawErrors === null || rawErrors === void 0 ? void 0 : rawErrors.length) && (rawErrors === null || rawErrors === void 0 ? void 0 : rawErrors.length) > 0;
+  var hasErrors = (rawErrors == null ? void 0 : rawErrors.length) && (rawErrors == null ? void 0 : rawErrors.length) > 0;
   var onPress = function onPress(newValue) {
     return function () {
       return onChange(newValue);
     };
   };
-  return React__default.createElement(reactNative.View, null, enumOptions.map(function (option, i) {
+  return /*#__PURE__*/React__default.createElement(reactNative.View, null, enumOptions.map(function (option, i) {
     var itemDisabled = enumDisabled && enumDisabled.indexOf(option.value) !== -1;
     var selected = option.value === value;
     var label = radioLabelMapping ? radioLabelMapping(option.label) : option.label;
     var color = hasErrors ? theme.errorColor : selected ? theme.highlightColor : theme.textColor;
-    return React__default.createElement(reactNative.TouchableOpacity, {
+    return /*#__PURE__*/React__default.createElement(reactNative.TouchableOpacity, {
       key: i,
       style: styles$8.container,
       disabled: disabled || itemDisabled || readonly,
       onPress: onPress(option.value)
-    }, React__default.createElement(reactNative.View, {
+    }, /*#__PURE__*/React__default.createElement(reactNative.View, {
       style: [styles$8.radioButton, {
         borderColor: color
       }]
-    }, selected && React__default.createElement(reactNative.View, {
+    }, selected && /*#__PURE__*/React__default.createElement(reactNative.View, {
       style: [styles$8.radioButtonFilled, {
         backgroundColor: theme.highlightColor
       }]
-    })), React__default.createElement(reactNative.Text, {
+    })), /*#__PURE__*/React__default.createElement(reactNative.Text, {
       style: [styles$8.text, {
         color: color
       }]
@@ -739,13 +753,13 @@ var RangeWidget = function RangeWidget(_ref) {
     step = _rangeSpec$step === void 0 ? 1 : _rangeSpec$step,
     _rangeSpec$max = _rangeSpec.max,
     max = _rangeSpec$max === void 0 ? 100 : _rangeSpec$max;
-  return React__default.createElement(reactNative.View, {
+  return /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: styles$9.container
-  }, React__default.createElement(reactNative.Text, {
+  }, /*#__PURE__*/React__default.createElement(reactNative.Text, {
     style: [styles$9.ends, {
       color: theme.textColor
     }]
-  }, min), React__default.createElement(slider.SliderComponent, {
+  }, min), /*#__PURE__*/React__default.createElement(slider.SliderComponent, {
     style: styles$9.slider,
     value: value,
     step: step,
@@ -755,7 +769,7 @@ var RangeWidget = function RangeWidget(_ref) {
     onValueChange: onChange,
     thumbTintColor: theme.highlightColor,
     minimumTrackTintColor: theme.highlightColor
-  }), React__default.createElement(reactNative.Text, {
+  }), /*#__PURE__*/React__default.createElement(reactNative.Text, {
     style: [styles$9.ends, {
       color: theme.highlightColor
     }]
@@ -764,12 +778,12 @@ var RangeWidget = function RangeWidget(_ref) {
 var styles$9 = /*#__PURE__*/reactNative.StyleSheet.create({
   container: {
     marginTop: 10,
-    alignItems: 'center',
-    flexDirection: 'row'
+    alignItems: "center",
+    flexDirection: "row"
   },
   ends: {
     fontSize: 14,
-    color: 'gray'
+    color: "gray"
   },
   slider: {
     flex: 1,
@@ -779,13 +793,13 @@ var styles$9 = /*#__PURE__*/reactNative.StyleSheet.create({
 });
 
 var EmailWidget = function EmailWidget(props) {
-  return React__default.createElement(TextWidget, Object.assign({}, props, {
+  return /*#__PURE__*/React__default.createElement(TextWidget, _extends({}, props, {
     textContentType: 'emailAddress'
   }));
 };
 
 var URLWidget = function URLWidget(props) {
-  return React__default.createElement(TextWidget, Object.assign({}, props, {
+  return /*#__PURE__*/React__default.createElement(TextWidget, _extends({}, props, {
     textContentType: 'URL'
   }));
 };
@@ -910,11 +924,11 @@ var AnyOfField = function AnyOfField(_ref2) {
       value: index
     };
   });
-  return React__default.createElement(reactNative.View, {
+  return /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: styles$a.container
-  }, React__default.createElement(reactNative.View, {
+  }, /*#__PURE__*/React__default.createElement(reactNative.View, {
     style: styles$a.formGroup
-  }, React__default.createElement(Widget, Object.assign({
+  }, /*#__PURE__*/React__default.createElement(Widget, _extends({
     id: "" + idSchema.$id + (schema.oneOf ? "__oneof_select" : "__anyof_select"),
     schema: {
       type: "number",
@@ -927,7 +941,9 @@ var AnyOfField = function AnyOfField(_ref2) {
     options: {
       enumOptions: enumOptions
     }
-  }, uiOptions))), selectedOption !== null && ( /* @ts-ignore */
+  }, uiOptions))), selectedOption !== null &&
+  /*#__PURE__*/
+  /* @ts-ignore */
   React__default.createElement(SchemaField, {
     schema: optionSchema,
     uiSchema: uiSchema,
@@ -940,7 +956,7 @@ var AnyOfField = function AnyOfField(_ref2) {
     onFocus: onFocus,
     registry: registry,
     disabled: disabled
-  })));
+  }));
 };
 var styles$a = /*#__PURE__*/reactNative.StyleSheet.create({
   container: {
@@ -967,11 +983,12 @@ var Fields = {
 var Theme = {
   widgets: Widgets,
   fields: Fields,
-  FieldTemplate: FieldTemplate,
-  ObjectFieldTemplate: ObjectFieldTemplate,
-  ArrayFieldTemplate: ArrayFieldTemplate,
-  ErrorList: ErrorList,
-  tagName: MockHTMLForm
+  templates: {
+    FieldTemplate: FieldTemplate,
+    ObjectFieldTemplate: ObjectFieldTemplate,
+    ArrayFieldTemplate: ArrayFieldTemplate,
+    ErrorListTemplate: ErrorList
+  }
 };
 
 var RNForm = /*#__PURE__*/core.withTheme(Theme);

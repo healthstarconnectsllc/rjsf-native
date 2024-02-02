@@ -1,8 +1,8 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import utils, { WidgetProps } from '@rjsf/utils';
-import { useFormContext } from '../FormContext';
-import { SliderComponent } from '@react-native-community/slider';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import utils, { WidgetProps } from "@rjsf/utils";
+import { useFormContext } from "../FormContext";
+import { SliderComponent } from "@react-native-community/slider";
 
 const { rangeSpec } = utils;
 
@@ -56,12 +56,12 @@ const RangeWidget = ({
 const styles = StyleSheet.create({
   container: {
     marginTop: 10,
-    alignItems: 'center',
-    flexDirection: 'row',
+    alignItems: "center",
+    flexDirection: "row",
   },
   ends: {
     fontSize: 14,
-    color: 'gray',
+    color: "gray",
   },
   slider: {
     flex: 1,

@@ -1,6 +1,6 @@
-/// <reference types="react" />
+import React from 'react';
 declare const RootTitleField: ({ title, required, }: {
     title?: string | undefined;
     required?: boolean | undefined;
-}) => JSX.Element;
+}) => React.JSX.Element;
 export default RootTitleField;

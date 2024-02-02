@@ -1,4 +1,4 @@
-/// <reference types="react" />
 import { WidgetProps } from '@rjsf/utils';
-declare const TextareaWidget: (props: WidgetProps) => JSX.Element;
+import React from 'react';
+declare const TextareaWidget: (props: WidgetProps) => React.JSX.Element;
 export default TextareaWidget;
