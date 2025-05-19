@@ -1,11 +1,13 @@
 {
-  "name": "rjsf-native",
+  "name": "@healthstarconnectsllc/rjsf-native",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "private": true,
   "module": "dist/rjsf-native.esm.js",
   "typings": "dist/index.d.ts",
   "description": "React Native theme, fields and widgets for react-jsonschema-form",
   "license": "MIT",
+  "repository": "https://github.com/healthstarconnectsllc/rjsf-native.git",
   "files": [
     "dist"
   ],
