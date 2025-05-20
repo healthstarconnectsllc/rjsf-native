@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish_gh_pacakge:
-    runs-on: [self-hosted, 2404-test]
+  publish_gh_package:
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
