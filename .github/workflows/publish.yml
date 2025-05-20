@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish_gh_pacakge:
+  publish_gh_package:
     runs-on: [self-hosted, 2404-test]
 
     steps:
