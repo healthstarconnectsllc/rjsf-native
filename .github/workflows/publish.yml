@@ -5,7 +5,7 @@ on:
 
 jobs:
   publish_gh_package:
-    runs-on: [self-hosted, 2404-test]
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
