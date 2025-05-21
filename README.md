@@ -2,8 +2,19 @@
 
 ## Getting Started
 
+- You will need to create a github classic token with repo:status and read:packages permissions in Github
+- You can login to our github package registry with the following command. When it prompts you for a username use your github username, and the token as the password
+
 ```bash
-yarn add @rjsf/core rjsf-native
+npm login --scope=@healthstarconnectsllc --auth-type=legacy --registry=https://npm.pkg.github.com
+```
+
+- Add an .npmrc file to your project with the following contents
+```
+@healthstarconnectsllc:registry=https://npm.pkg.github.com
+```
+```bash
+yarn add @rjsf/core @healthstarconnectsllc/rjsf-native
 
 # This package also depends on `@react-native-community/slider`
 yarn add @react-native-community/slider
@@ -77,4 +88,8 @@ const App = () => {
 ![](./docs/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-01-03%20at%2011.45.00.png) | ![](./docs/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202020-01-03%20at%2011.45.04.png)
 :-------------------------:|:-------------------------:
 
+## Publishing
+
+1. You must have the GitHub CLI installed
+2. Run `gh release --repo healthstarconnectsllc/rjsf-native create v1.0.2` to create a release/tag and trigger the publish workflow
 
