@@ -1,11 +1,15 @@
 name: Publish to GitHub Packages
 
 on:
-  workflow_dispatch:
+  release:
+    types: [created]
 
 jobs:
   publish_gh_package:
     runs-on: ubuntu-24.04
+    permissions:
+      packages: write
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
