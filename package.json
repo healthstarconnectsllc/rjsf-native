@@ -7,6 +7,9 @@
   "description": "React Native theme, fields and widgets for react-jsonschema-form",
   "license": "MIT",
   "repository": "https://github.com/healthstarconnectsllc/rjsf-native.git",
+  "publishConfig": {
+    "@healthstarconnectsllc:rjsf-native": "https://npm.pkg.github.com"
+  },
   "files": [
     "dist"
   ],
