@@ -22,7 +22,7 @@ yarn add @react-native-community/slider
 
 ## Usage
 ```typescript
-import ReactNativeForm from 'rjsf-native';
+import ReactNativeForm from '@healthstarconnectsllc/rjsf-native';
 
 const App = () => {
   const form = useRef(null);
@@ -50,7 +50,7 @@ const App = () => {
 We also provide a Context as a form of overriding defaults and theming
 
 ```typescript
-import ReactNativeForm, {defaultProps, FormContext} from 'rjsf-native';
+import ReactNativeForm, {defaultProps, FormContext} from '@healthstarconnectsllc/rjsf-native';
 
 const App = () => {
   const form = useRef(null)
